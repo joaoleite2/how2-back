@@ -8,10 +8,9 @@ export class ProfessionsController {
   constructor(private readonly professionsService: ProfessionsService) {}
 
   @Post()
-  create(@Body() createProfessionDto: CreateProfessionDto) {
-    return this.professionsService.create(createProfessionDto);
+  create(@Body() body: CreateProfessionDto) {
+    return this.professionsService.create(body);
   }
-
   @Get()
   findAll() {
     return this.professionsService.findAll();
@@ -22,13 +21,13 @@ export class ProfessionsController {
     return this.professionsService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProfessionDto: UpdateProfessionDto) {
-    return this.professionsService.update(+id, updateProfessionDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateProfessionDto: UpdateProfessionDto) {
+  //   return this.professionsService.update(+id, updateProfessionDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.professionsService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.professionsService.remove(+id);
+  // }
 }
